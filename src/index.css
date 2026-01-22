@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* HarmoniQ Design System - Blue Excellence */
+
+@layer base {
+  :root {
+    /* HarmoniQ Color Palette */
+    --background: 220 14% 96%; /* #e5e7eb light gray */
+    --foreground: 215 28% 11%; /* #0f172a dark navy */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 11%;
+    
+    /* Primary: Sky Blue #38bdf8 */
+    --primary: 199 89% 60%;
+    --primary-foreground: 215 28% 11%;
+    
+    /* Secondary: Dark Navy #0f172a */
+    --secondary: 215 28% 11%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 220 14% 90%;
+    --muted-foreground: 215 20% 40%;
+    
+    /* Accent: Light Cyan #67e8f9 */
+    --accent: 187 92% 69%;
+    --accent-foreground: 215 28% 11%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 14% 85%;
+    --input: 220 14% 90%;
+    --ring: 199 89% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 215 28% 11%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 199 89% 60%;
+    --sidebar-primary-foreground: 215 28% 11%;
+    --sidebar-accent: 215 28% 17%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 199 89% 60%;
+    
+    /* HarmoniQ Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 28% 11%), hsl(215 28% 17%));
+    --gradient-overlay: linear-gradient(180deg, hsl(215 28% 11% / 0.95), hsl(215 28% 17% / 0.8));
+    --gradient-accent: linear-gradient(135deg, hsl(199 89% 60%), hsl(187 92% 69%));
+    
+    /* Elegant Shadows */
+    --shadow-architectural: 0 25px 50px -12px hsl(215 28% 11% / 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsl(199 89% 60% / 0.3);
+    --shadow-glow: 0 0 40px hsl(199 89% 60% / 0.2);
+    
+    /* Smooth Transitions */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark {
+    --background: 215 28% 11%; /* #0f172a */
+    --foreground: 220 14% 96%; /* #e5e7eb */
+    
+    --card: 215 28% 14%;
+    --card-foreground: 220 14% 96%;
+    
+    --popover: 215 28% 14%;
+    --popover-foreground: 220 14% 96%;
+    
+    --primary: 199 89% 60%; /* #38bdf8 */
+    --primary-foreground: 215 28% 11%;
+    
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 220 14% 96%;
+    
+    --muted: 215 28% 17%;
+    --muted-foreground: 220 14% 70%;
+    
+    --accent: 187 92% 69%; /* #67e8f9 */
+    --accent-foreground: 215 28% 11%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 215 28% 20%;
+    --input: 215 28% 17%;
+    --ring: 199 89% 60%;
+    
+    --sidebar-background: 215 28% 8%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 199 89% 60%;
+    --sidebar-primary-foreground: 215 28% 11%;
+    --sidebar-accent: 215 28% 14%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 199 89% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Architectural Typography */
+  .text-architectural {
+    @apply tracking-[-0.02em] leading-[1.1];
+  }
+  
+  .text-minimal {
+    @apply tracking-wide uppercase text-xs font-medium;
+  }
+  
+  /* Hero Image Overlay */
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+  
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  
+  /* Smooth Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-8;
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  
+  .reveal-delayed {
+    @apply opacity-0 translate-y-8;
+    animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+  
+  @keyframes reveal {
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+}
